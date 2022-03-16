@@ -59,7 +59,7 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
 
         return window.location.assign('/end.html');
@@ -75,7 +75,7 @@ getNewQuestion = () => {
 
     choices.forEach(choice => {
         const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice + number'];
+        choice.innerText = currentQuestion['choice' + number];
     });
 
     availableQuestions.splice(questionsIndex, 1);
@@ -103,3 +103,10 @@ choices.forEach(choice => {
         }, 1000);
     });
 });
+
+incrementScore = num => {
+    score +=num;
+    scoreText.innerText = score
+}
+
+startGame();
