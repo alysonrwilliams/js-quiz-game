@@ -17,7 +17,7 @@ let questions = [
         choice2: '4',
         choice3: '21',
         choice4: '17',
-        answer: 1,
+        answer: 2,
     },
 
     {
@@ -62,7 +62,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
 
-        return window.location.assign('/end.html');
+        return window.location.assign('./end.html');
     }
 
     questionCounter++;
